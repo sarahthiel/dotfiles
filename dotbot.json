@@ -1,0 +1,57 @@
+[
+    {
+        "defaults": {
+            "link": {
+                "relink": true
+            }
+        }
+    },
+    {
+        "clean": ["~"]
+    },
+    {
+        "shell": [
+            ["git submodule update --init --recursive", "Installing submodules"],
+            ["mkdir -p ~/.zsh/vendor", "create folder for zsh plugins"]
+        ]
+    },
+    {
+        "link": {
+            "~/.bin": "bin",
+            "~/.zshrc": "zsh/zshrc",
+            "~/.zsh/zsh": "zsh/zsh",
+            "~/.zsh/vendor/prompt.zsh": "vendor/sebastianthiel/prompt/sthprompt.zsh",
+            "~/.zsh/vendor/zsh-autosuggestions.zsh": "vendor/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh",
+            "~/.zsh/vendor/zsh-syntax-highlighting.zsh": "vendor/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh",
+            "~/.bin/tmux": "tmux/bin",
+            "~/.tmux.conf": "tmux/tmux.conf",
+            "~/.tmux.conf.local": "tmux/tmux.conf.local",
+            "~/.zsh/shell": "shell/zsh",
+            "~/.zsh/git": "git/zsh",
+            "~/.ggitignore": "git/ggitignore",
+            "~/.gitconfig": "git/gitconfig",
+            "~/.vimrc": "vim/vimrc",
+            "~/.vim": "vim/vim",
+            "~/.vim/bundle/Vundle.vim": "vendor/VundleVim/Vundle.vim",
+            "~/.zsh/vim": "vim/zsh",
+            "~/.zsh/osx": "macOS/zsh",
+            "~/.gnupg": "gnupg",
+            "~/.ssh": "ssh",
+            "~/.curlrc": "curl/curlrc",
+            "~/.zsh/brew": "brew/zsh",
+            "~/.zsh/vagrant": "vagrant/zsh",
+            "~/.zsh/zsh/z.zsh": "vendor/rupa/z/z.sh",
+            "~/.httpie": "httpie"
+        }
+    },
+    {
+        "shell": [
+            ["vim +PluginInstall +qall", "Installing vim plugins"],
+            ["chmod 700 ~/.gnupg", "Updating permissions"],
+            ["touch ~/.z", ""],
+            ["sudo cp -a vendor/sebastianthiel/ende/en-DE.bundle \"/Library/Keyboard Layouts/\"", "copy keyboard layout"],
+            ["sh macOS/provision-system.sh", "Provision System"],
+            ["sh macOS/provision-user.sh", "Provision User"]
+        ]
+    }
+]

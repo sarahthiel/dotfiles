@@ -1,0 +1,110 @@
+# gitconfig
+[core]
+    excludesfile = ~/.ggitignore
+    pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less -rX -x2
+    editor = vim
+
+[user]
+	name = Sebastian Thiel
+	email = s.thiel@sae.edu
+
+[alias]
+    # list all aliases
+    la = "!git config -l | grep alias | cut -c 7-"
+
+    delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
+    diff = diff --ignore-space-at-eol -b -w --ignore-blank-lines
+
+    l = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(reset) - %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
+    # current branch
+    cbr = rev-parse --abbrev-ref HEAD
+
+    undo = reset --soft HEAD~1
+
+    cleanup = "!git remote prune origin && git gc && git clean -df && git stash clear"
+
+	# clean up all
+    forget = "!git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
+
+    find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+
+    show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+
+[color "branch"]
+    current = green bold
+    local = green
+    remote = red bold
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red
+
+[color "sh"]
+    branch = yellow
+
+[push]
+    default = current
+
+[branch]
+    # set up 'git pull' to rebase instead of merge
+    autosetuprebase = always
+
+[diff]
+    renames = copies
+    mnemonicprefix = true
+    compactionHeuristic = true
+
+[difftool]
+    prompt = false
+
+[apply]
+    # do not warn about missing whitespace at EOF
+    whitespace = nowarn
+
+[rerere]
+    enabled = true
+
+[gitsh]
+    defaultCommand = s
+
+[grep]
+    extendRegexp = true
+    lineNumber = true
+
+[credential]
+	helper = osxkeychain
+
+[rebase]
+	instructionFormat = "[%an - %ar] %s"
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[gpg]
+	program = /usr/local/bin/gpg
+[commit]
+	gpgsign = true
