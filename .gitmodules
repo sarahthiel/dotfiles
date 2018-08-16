@@ -4,18 +4,6 @@
 [submodule "vendor/sebastianthiel/prompt"]
 	path = vendor/sebastianthiel/prompt
 	url = https://github.com/sebastianthiel/prompt.git
-[submodule "vendor/zsh-users/zsh-autosuggestions"]
-	path = vendor/zsh-users/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "vendor/zsh-users/zsh-syntax-highlighting"]
-	path = vendor/zsh-users/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "vendor/VundleVim/Vundle.vim"]
 	path = vendor/VundleVim/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "vendor/rupa/z"]
-	path = vendor/rupa/z
-	url = https://github.com/rupa/z.git
-[submodule "vendor/sebastianthiel/ende"]
-	path = vendor/sebastianthiel/ende
-	url = https://github.com/sebastianthiel/ende.git

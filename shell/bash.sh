@@ -5,6 +5,11 @@ alias _='sudo '
 alias __='sudo -s'
 alias doch='sudo $(fc -ln -1)'
 
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 # List direcory contents
 alias l='ls -la'
 alias ll='ls -l'
@@ -30,16 +35,6 @@ alias psg="ps -Ao pid,user,comm | grep $1"
 
 #get random string
 alias random='openssl rand -base64 48'
-
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias cd..='cd ..'
-alias cd...='cd ../..'
-alias cd....='cd ../../..'
-alias cd.....='cd ../../../..'
-alias ~="cd ~"
 
 alias md='mkdir -pv'
 

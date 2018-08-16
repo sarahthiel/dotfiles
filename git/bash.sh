@@ -46,36 +46,9 @@ alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash show --text'
 
-
 alias gst='git status'
 alias gsb='git status -sb'
 alias gss='git status -s'
 
-alias gsi='git submodule init'
-alias gsu='git submodule update'
-
 alias gts='git tag -s'
 alias gtv='git tag | sort -V'
-
-# Query/use custom command for `git`.
-zstyle -s ":vcs_info:git:*:-all-" "command" _omz_git_git_cmd
-: ${_omz_git_git_cmd:=git}
-
-function current_branch() {
-  git_current_branch
-}
-
-function gfg() { git ls-files | grep $@ }
-compdef _grep gfg
-
-alias gpull='git pull origin $(git_current_branch)'
-compdef _git gpull=git-checkout
-
-alias gpoat='git push origin --all && git push origin --tags'
-compdef _git gpoat=git-push
-
-alias ggpush='git push origin $(git_current_branch)'
-compdef _git ggpush=git-checkout
-
-alias gcount='git shortlog -sn'
-compdef _git gcount
