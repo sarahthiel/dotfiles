@@ -41,7 +41,8 @@
             "~/.zsh/brew": "brew/zsh",
             "~/.zsh/vagrant": "vagrant/zsh",
             "~/.zsh/zsh/z.zsh": "vendor/rupa/z/z.sh",
-            "~/.httpie": "httpie"
+            "~/.httpie": "httpie",
+            "~/.zsh/pass": "pass/zsh"
         }
     },
     {
