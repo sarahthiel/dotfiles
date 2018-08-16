@@ -20,3 +20,7 @@ ssh/id_*
 /ssh/config
 /ssh/known_hosts
 /zsh/zsh/z.zsh
+/gnupg/openpgp-revocs.d
+/macOS/Alfred/Alfred.alfredpreferences
+/gnupg/tofu.db
+/gnupg/random_seed
