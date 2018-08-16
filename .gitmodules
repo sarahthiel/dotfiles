@@ -1,9 +1,9 @@
 [submodule "vendor/anishathalye/dotbot"]
 	path = vendor/anishathalye/dotbot
 	url = https://github.com/anishathalye/dotbot.git
-[submodule "vendor/sebastianthiel/prompt"]
-	path = vendor/sebastianthiel/prompt
-	url = https://github.com/sebastianthiel/prompt.git
 [submodule "vendor/VundleVim/Vundle.vim"]
 	path = vendor/VundleVim/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "vendor/sebastianthiel/prompt"]
+	path = vendor/sebastianthiel/prompt
+	url = https://github.com/sebastianthiel/prompt.git
