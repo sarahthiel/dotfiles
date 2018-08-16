@@ -1,7 +1,6 @@
 # gitconfig
 [core]
     excludesfile = ~/.ggitignore
-    pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less -rX -x2
     editor = vim
 
 [user]
@@ -12,7 +11,6 @@
     # list all aliases
     la = "!git config -l | grep alias | cut -c 7-"
 
-    delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
     diff = diff --ignore-space-at-eol -b -w --ignore-blank-lines
 
     l = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(reset) - %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
@@ -92,9 +90,6 @@
     extendRegexp = true
     lineNumber = true
 
-[credential]
-	helper = osxkeychain
-
 [rebase]
 	instructionFormat = "[%an - %ar] %s"
 
@@ -103,8 +98,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-
-[gpg]
-	program = /usr/local/bin/gpg
-[commit]
-	gpgsign = true
